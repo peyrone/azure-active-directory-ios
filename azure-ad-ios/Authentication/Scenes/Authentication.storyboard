@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authentication View Controller-->
+        <scene sceneID="caA-da-sTL">
+            <objects>
+                <viewController storyboardIdentifier="AuthenticationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jkn-82-7uI" customClass="AuthenticationViewController" customModule="azure_ad_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yRG-Lw-lid"/>
+                        <viewControllerLayoutGuide type="bottom" id="NoY-s7-lD9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="frG-Cw-Iga">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBc-l4-o1n">
+                                <rect key="frame" x="16" y="317" width="382" height="465"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" updatesFrequently="YES"/>
+                                </accessibility>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1d-AV-vXf">
+                                <rect key="frame" x="352" y="94" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuO-vf-ivY">
+                                <rect key="frame" x="144" y="134" width="126" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Call Graph API"/>
+                                <connections>
+                                    <action selector="callGraphAPI:" destination="jkn-82-7uI" eventType="touchUpInside" id="cAA-cA-ejZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4i-jo-Faz">
+                                <rect key="frame" x="171" y="185" width="72" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign out"/>
+                                <connections>
+                                    <action selector="signout:" destination="jkn-82-7uI" eventType="touchUpInside" id="g92-ML-XXn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZW-KI-k1L">
+                                <rect key="frame" x="140" y="266" width="134" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Get Device Info"/>
+                                <connections>
+                                    <action selector="getDeviceMode:" destination="jkn-82-7uI" eventType="touchUpInside" id="2Dy-CM-bi2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="m4i-jo-Faz" firstAttribute="top" secondItem="cuO-vf-ivY" secondAttribute="bottom" constant="15" id="8Hm-QK-vla"/>
+                            <constraint firstItem="cuO-vf-ivY" firstAttribute="top" secondItem="yRG-Lw-lid" secondAttribute="bottom" constant="90" id="9Zd-Mg-YkY"/>
+                            <constraint firstItem="WpB-dU-Ocm" firstAttribute="trailing" secondItem="P1d-AV-vXf" secondAttribute="trailing" constant="20" id="GiE-OJ-3fa"/>
+                            <constraint firstItem="wBc-l4-o1n" firstAttribute="centerX" secondItem="frG-Cw-Iga" secondAttribute="centerX" id="IEr-fG-RzZ"/>
+                            <constraint firstItem="wBc-l4-o1n" firstAttribute="top" secondItem="IZW-KI-k1L" secondAttribute="bottom" constant="15" id="LgJ-QQ-be2"/>
+                            <constraint firstItem="cuO-vf-ivY" firstAttribute="centerX" secondItem="frG-Cw-Iga" secondAttribute="centerX" id="N5W-it-S3d"/>
+                            <constraint firstItem="m4i-jo-Faz" firstAttribute="centerX" secondItem="frG-Cw-Iga" secondAttribute="centerX" id="PJG-02-6Hc"/>
+                            <constraint firstItem="IZW-KI-k1L" firstAttribute="centerX" secondItem="frG-Cw-Iga" secondAttribute="centerX" id="XOd-P9-1Gh"/>
+                            <constraint firstItem="P1d-AV-vXf" firstAttribute="top" secondItem="yRG-Lw-lid" secondAttribute="bottom" constant="50" id="a4e-He-W6l"/>
+                            <constraint firstItem="NoY-s7-lD9" firstAttribute="top" secondItem="wBc-l4-o1n" secondAttribute="bottom" constant="80" id="eyu-w4-epR"/>
+                            <constraint firstItem="IZW-KI-k1L" firstAttribute="top" secondItem="yRG-Lw-lid" secondAttribute="bottom" constant="222" id="uht-NV-bUU"/>
+                            <constraint firstItem="WpB-dU-Ocm" firstAttribute="trailing" secondItem="wBc-l4-o1n" secondAttribute="trailing" constant="16" id="wsj-dD-rWh"/>
+                            <constraint firstItem="IZW-KI-k1L" firstAttribute="top" secondItem="m4i-jo-Faz" secondAttribute="bottom" constant="15" id="xoo-HO-gXD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WpB-dU-Ocm"/>
+                    </view>
+                    <connections>
+                        <outlet property="callGraphButton" destination="cuO-vf-ivY" id="EeP-KN-qHm"/>
+                        <outlet property="loggingText" destination="wBc-l4-o1n" id="sDo-wl-Sq5"/>
+                        <outlet property="signoutButton" destination="m4i-jo-Faz" id="PVn-UR-f1o"/>
+                        <outlet property="usernameLabel" destination="P1d-AV-vXf" id="KOC-ZY-9Mg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oy-M2-em0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.13043478260872" y="136.60714285714286"/>
+        </scene>
+    </scenes>
+</document>
