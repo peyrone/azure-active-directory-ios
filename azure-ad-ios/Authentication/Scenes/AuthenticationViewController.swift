@@ -25,6 +25,8 @@ class AuthenticationViewController: UIViewController {
     var currentAccount: MSALAccount?
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         do {
             try self.initMSAL()
         } catch let error {
@@ -73,9 +75,7 @@ class AuthenticationViewController: UIViewController {
     
     @IBAction func callGraphAPI(_ sender: UIButton) {
         self.loadCurrentAccount { (account) in
-            
             guard let currentAccount = account else {
-                
                 // We check to see if we have a current logged in account.
                 // If we don't, then we need to sign someone in.
                 self.acquireTokenInteractively()
